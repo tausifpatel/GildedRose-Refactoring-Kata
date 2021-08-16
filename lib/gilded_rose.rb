@@ -9,21 +9,21 @@ class GildedRose
       
       if item.quality > 0 and item.quality < 50      
         if item.name == "Aged Brie"
-          item.quality = item.quality + 1
+          item.quality += 1
         end 
 
         if item.name == "Backstage passes to a TAFKAL80ETC concert"
-          item.quality = item.quality + 2 if item.sell_in < 11
-          item.quality = item.quality + 1 if item.sell_in < 6
+          item.quality += 2 if item.sell_in < 11
+          item.quality += 1 if item.sell_in < 6
         end 
         
         if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert" and item.name != "Sulfuras, Hand of Ragnaros"
-          item.quality = item.quality - 1
-          item.quality = item.quality - 1 if item.sell_in < 0
+          item.quality -= 1
+          item.quality -= 1 if item.sell_in < 0
         end
         
         if item.name != "Sulfuras, Hand of Ragnaros"
-          item.sell_in = item.sell_in - 1
+          item.sell_in -= 1
         end
       end 
     
